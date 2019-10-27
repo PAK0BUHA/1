@@ -1,0 +1,31 @@
+//#include "pch.h"
+#include "iostream"
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "rus");
+	int A, x, prod;
+
+	cout << "Введите число: ";
+	cin >> A;
+	x = 0;
+	prod = 1;
+
+	while (A > 0)
+	{
+		x = A % 10;
+		prod *= x;
+		A /= 10;
+	}
+	if (prod >= 100)
+	{
+		cout << endl << "Произведение цифр данного числа является трёхзначным числом (" << prod << ").";
+	}
+	else
+	{
+		cout << endl << "Произведение цифр данного числа не является трёхзначным числом (" << prod << ").";
+	}
+
+}
