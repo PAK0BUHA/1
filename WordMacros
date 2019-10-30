@@ -1,4 +1,3 @@
-
 Sub Horizontal()
     ActiveDocument.Tables(1).Rows(1).Cells(7).Select
     Selection.MoveRight Unit:=wdCharacter, Count:=5, Extend:=wdExtend
@@ -121,9 +120,6 @@ Sub Horizontal()
     Selection.Shading.ForegroundPatternColor = wdColorAutomatic
     Selection.Shading.BackgroundPatternColor = -738132173
 End Sub
-
-
-
 
 Sub Vertical()
     ActiveDocument.Tables(1).Rows(2).Cells(2).Select
@@ -263,9 +259,6 @@ Sub Vertical()
     Selection.Shading.BackgroundPatternColor = -738132173
 End Sub
 
-
-
-
 Sub Cancel_H()
     ActiveDocument.Tables(1).Rows(1).Cells(7).Select
     Selection.MoveRight Unit:=wdCharacter, Count:=5, Extend:=wdExtend
@@ -334,6 +327,7 @@ Sub Cancel_H()
         .DefaultBorderColor = -738131969
     End With
 End Sub
+
 Sub Cancel_V()
     ActiveDocument.Tables(1).Rows(2).Cells(2).Select
     Selection.MoveDown Unit:=wdLine, Count:=4, Extend:=wdExtend
@@ -403,8 +397,6 @@ Sub Cancel_V()
     End With
 End Sub
 
-
-
 Sub Clear_H()
     ActiveDocument.Tables(1).Rows(1).Cells(7).Select
     Selection.MoveRight Unit:=wdCharacter, Count:=5, Extend:=wdExtend
@@ -416,9 +408,6 @@ Sub Clear_H()
     Selection.MoveRight Unit:=wdCharacter, Count:=8, Extend:=wdExtend
     Selection.Delete Unit:=wdCharacter, Count:=1
 End Sub
-
-
-
 
 Sub Clear_V()
     ActiveDocument.Tables(1).Rows(2).Cells(2).Select
