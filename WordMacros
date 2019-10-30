@@ -1,3 +1,4 @@
+
 Sub Horizontal()
     ActiveDocument.Tables(1).Rows(1).Cells(7).Select
     Selection.MoveRight Unit:=wdCharacter, Count:=5, Extend:=wdExtend
@@ -407,5 +408,26 @@ End Sub
 Sub Clear_H()
     ActiveDocument.Tables(1).Rows(1).Cells(7).Select
     Selection.MoveRight Unit:=wdCharacter, Count:=5, Extend:=wdExtend
+    Selection.Delete Unit:=wdCharacter, Count:=1
+    ActiveDocument.Tables(1).Rows(3).Cells(1).Select
+    Selection.MoveRight Unit:=wdCharacter, Count:=7, Extend:=wdExtend
+    Selection.Delete Unit:=wdCharacter, Count:=1
+    ActiveDocument.Tables(1).Rows(5).Cells(2).Select
+    Selection.MoveRight Unit:=wdCharacter, Count:=8, Extend:=wdExtend
+    Selection.Delete Unit:=wdCharacter, Count:=1
+End Sub
+
+
+
+
+Sub Clear_V()
+    ActiveDocument.Tables(1).Rows(2).Cells(2).Select
+    Selection.MoveDown Unit:=wdLine, Count:=4, Extend:=wdExtend
+    Selection.Delete Unit:=wdCharacter, Count:=1
+    ActiveDocument.Tables(1).Rows(2).Cells(7).Select
+    Selection.MoveDown Unit:=wdLine, Count:=5, Extend:=wdExtend
+    Selection.Delete Unit:=wdCharacter, Count:=1
+    ActiveDocument.Tables(1).Rows(1).Cells(11).Select
+    Selection.MoveDown Unit:=wdLine, Count:=3, Extend:=wdExtend
     Selection.Delete Unit:=wdCharacter, Count:=1
 End Sub
