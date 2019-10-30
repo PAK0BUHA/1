@@ -1,0 +1,411 @@
+Sub Horizontal()
+    ActiveDocument.Tables(1).Rows(1).Cells(7).Select
+    Selection.MoveRight Unit:=wdCharacter, Count:=5, Extend:=wdExtend
+    With Selection.Cells
+        With .Borders(wdBorderLeft)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderRight)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderTop)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderBottom)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderVertical)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        .Borders(wdBorderDiagonalDown).LineStyle = wdLineStyleNone
+        .Borders(wdBorderDiagonalUp).LineStyle = wdLineStyleNone
+        .Borders.Shadow = False
+    End With
+    With Options
+        .DefaultBorderLineStyle = wdLineStyleSingle
+        .DefaultBorderLineWidth = wdLineWidth050pt
+        .DefaultBorderColor = -738131969
+    End With
+    Selection.Shading.Texture = wdTextureNone
+    Selection.Shading.ForegroundPatternColor = wdColorAutomatic
+    Selection.Shading.BackgroundPatternColor = -738132173
+    ActiveDocument.Tables(1).Rows(3).Cells(1).Select
+    Selection.MoveRight Unit:=wdCharacter, Count:=7, Extend:=wdExtend
+    With Selection.Cells
+        With .Borders(wdBorderLeft)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderRight)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderTop)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderBottom)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderVertical)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        .Borders(wdBorderDiagonalDown).LineStyle = wdLineStyleNone
+        .Borders(wdBorderDiagonalUp).LineStyle = wdLineStyleNone
+        .Borders.Shadow = False
+    End With
+    With Options
+        .DefaultBorderLineStyle = wdLineStyleSingle
+        .DefaultBorderLineWidth = wdLineWidth050pt
+        .DefaultBorderColor = -738131969
+    End With
+    Selection.Shading.Texture = wdTextureNone
+    Selection.Shading.ForegroundPatternColor = wdColorAutomatic
+    Selection.Shading.BackgroundPatternColor = -738132173
+    ActiveDocument.Tables(1).Rows(5).Cells(2).Select
+    Selection.MoveRight Unit:=wdCharacter, Count:=8, Extend:=wdExtend
+    With Selection.Cells
+        With .Borders(wdBorderLeft)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderRight)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderTop)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderBottom)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderVertical)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        .Borders(wdBorderDiagonalDown).LineStyle = wdLineStyleNone
+        .Borders(wdBorderDiagonalUp).LineStyle = wdLineStyleNone
+        .Borders.Shadow = False
+    End With
+    With Options
+        .DefaultBorderLineStyle = wdLineStyleSingle
+        .DefaultBorderLineWidth = wdLineWidth050pt
+        .DefaultBorderColor = -738131969
+    End With
+    Selection.Shading.Texture = wdTextureNone
+    Selection.Shading.ForegroundPatternColor = wdColorAutomatic
+    Selection.Shading.BackgroundPatternColor = -738132173
+End Sub
+
+
+
+
+Sub Vertical()
+    ActiveDocument.Tables(1).Rows(2).Cells(2).Select
+    Selection.MoveDown Unit:=wdLine, Count:=4, Extend:=wdExtend
+    With Selection.Cells
+        With .Shading
+            .Texture = wdTextureSolid
+            .ForegroundPatternColor = -738132173
+            .BackgroundPatternColor = wdColorAutomatic
+        End With
+        With .Borders(wdBorderLeft)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderRight)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderTop)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderBottom)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderHorizontal)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        .Borders(wdBorderDiagonalDown).LineStyle = wdLineStyleNone
+        .Borders(wdBorderDiagonalUp).LineStyle = wdLineStyleNone
+        .Borders.Shadow = False
+    End With
+    With Options
+        .DefaultBorderLineStyle = wdLineStyleSingle
+        .DefaultBorderLineWidth = wdLineWidth050pt
+        .DefaultBorderColor = -738131969
+    End With
+    Selection.Shading.Texture = wdTextureNone
+    Selection.Shading.ForegroundPatternColor = wdColorAutomatic
+    Selection.Shading.BackgroundPatternColor = -738132173
+    ActiveDocument.Tables(1).Rows(2).Cells(7).Select
+    Selection.MoveDown Unit:=wdLine, Count:=5, Extend:=wdExtend
+    With Selection.Cells
+        With .Shading
+            .Texture = wdTextureSolid
+            .ForegroundPatternColor = -738132173
+            .BackgroundPatternColor = wdColorAutomatic
+        End With
+        With .Borders(wdBorderLeft)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderRight)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderTop)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderBottom)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderHorizontal)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        .Borders(wdBorderDiagonalDown).LineStyle = wdLineStyleNone
+        .Borders(wdBorderDiagonalUp).LineStyle = wdLineStyleNone
+        .Borders.Shadow = False
+    End With
+    With Options
+        .DefaultBorderLineStyle = wdLineStyleSingle
+        .DefaultBorderLineWidth = wdLineWidth050pt
+        .DefaultBorderColor = -738131969
+    End With
+    Selection.Shading.Texture = wdTextureNone
+    Selection.Shading.ForegroundPatternColor = wdColorAutomatic
+    Selection.Shading.BackgroundPatternColor = -738132173
+    ActiveDocument.Tables(1).Rows(1).Cells(11).Select
+    Selection.MoveDown Unit:=wdLine, Count:=3, Extend:=wdExtend
+    With Selection.Cells
+        With .Shading
+            .Texture = wdTextureSolid
+            .ForegroundPatternColor = -738132173
+            .BackgroundPatternColor = wdColorAutomatic
+        End With
+        With .Borders(wdBorderLeft)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderRight)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderTop)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderBottom)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        With .Borders(wdBorderHorizontal)
+            .LineStyle = wdLineStyleSingle
+            .LineWidth = wdLineWidth050pt
+            .Color = -738131969
+        End With
+        .Borders(wdBorderDiagonalDown).LineStyle = wdLineStyleNone
+        .Borders(wdBorderDiagonalUp).LineStyle = wdLineStyleNone
+        .Borders.Shadow = False
+    End With
+    With Options
+        .DefaultBorderLineStyle = wdLineStyleSingle
+        .DefaultBorderLineWidth = wdLineWidth050pt
+        .DefaultBorderColor = -738131969
+    End With
+    Selection.Shading.Texture = wdTextureNone
+    Selection.Shading.ForegroundPatternColor = wdColorAutomatic
+    Selection.Shading.BackgroundPatternColor = -738132173
+End Sub
+
+
+
+
+Sub Cancel_H()
+    ActiveDocument.Tables(1).Rows(1).Cells(7).Select
+    Selection.MoveRight Unit:=wdCharacter, Count:=5, Extend:=wdExtend
+    With Selection.Cells
+        With .Shading
+            .Texture = wdTextureNone
+            .ForegroundPatternColor = wdColorAutomatic
+            .BackgroundPatternColor = wdColorAutomatic
+        End With
+        .Borders(wdBorderLeft).LineStyle = wdLineStyleNone
+        .Borders(wdBorderRight).LineStyle = wdLineStyleNone
+        .Borders(wdBorderTop).LineStyle = wdLineStyleNone
+        .Borders(wdBorderBottom).LineStyle = wdLineStyleNone
+        .Borders(wdBorderVertical).LineStyle = wdLineStyleNone
+        .Borders(wdBorderDiagonalDown).LineStyle = wdLineStyleNone
+        .Borders(wdBorderDiagonalUp).LineStyle = wdLineStyleNone
+        .Borders.Shadow = False
+    End With
+    With Options
+        .DefaultBorderLineStyle = wdLineStyleSingle
+        .DefaultBorderLineWidth = wdLineWidth050pt
+        .DefaultBorderColor = -738131969
+    End With
+    ActiveDocument.Tables(1).Rows(3).Cells(1).Select
+    Selection.MoveRight Unit:=wdCharacter, Count:=7, Extend:=wdExtend
+    With Selection.Cells
+        With .Shading
+            .Texture = wdTextureNone
+            .ForegroundPatternColor = wdColorAutomatic
+            .BackgroundPatternColor = wdColorAutomatic
+        End With
+        .Borders(wdBorderLeft).LineStyle = wdLineStyleNone
+        .Borders(wdBorderRight).LineStyle = wdLineStyleNone
+        .Borders(wdBorderTop).LineStyle = wdLineStyleNone
+        .Borders(wdBorderBottom).LineStyle = wdLineStyleNone
+        .Borders(wdBorderVertical).LineStyle = wdLineStyleNone
+        .Borders(wdBorderDiagonalDown).LineStyle = wdLineStyleNone
+        .Borders(wdBorderDiagonalUp).LineStyle = wdLineStyleNone
+        .Borders.Shadow = False
+    End With
+    With Options
+        .DefaultBorderLineStyle = wdLineStyleSingle
+        .DefaultBorderLineWidth = wdLineWidth050pt
+        .DefaultBorderColor = -738131969
+    End With
+    ActiveDocument.Tables(1).Rows(5).Cells(2).Select
+    Selection.MoveRight Unit:=wdCharacter, Count:=8, Extend:=wdExtend
+    With Selection.Cells
+        With .Shading
+            .Texture = wdTextureNone
+            .ForegroundPatternColor = wdColorAutomatic
+            .BackgroundPatternColor = wdColorAutomatic
+        End With
+        .Borders(wdBorderLeft).LineStyle = wdLineStyleNone
+        .Borders(wdBorderRight).LineStyle = wdLineStyleNone
+        .Borders(wdBorderTop).LineStyle = wdLineStyleNone
+        .Borders(wdBorderBottom).LineStyle = wdLineStyleNone
+        .Borders(wdBorderVertical).LineStyle = wdLineStyleNone
+        .Borders(wdBorderDiagonalDown).LineStyle = wdLineStyleNone
+        .Borders(wdBorderDiagonalUp).LineStyle = wdLineStyleNone
+        .Borders.Shadow = False
+    End With
+    With Options
+        .DefaultBorderLineStyle = wdLineStyleSingle
+        .DefaultBorderLineWidth = wdLineWidth050pt
+        .DefaultBorderColor = -738131969
+    End With
+End Sub
+Sub Cancel_V()
+    ActiveDocument.Tables(1).Rows(2).Cells(2).Select
+    Selection.MoveDown Unit:=wdLine, Count:=4, Extend:=wdExtend
+   With Selection.Cells
+        With .Shading
+            .Texture = wdTextureNone
+            .ForegroundPatternColor = wdColorAutomatic
+            .BackgroundPatternColor = wdColorAutomatic
+        End With
+        .Borders(wdBorderLeft).LineStyle = wdLineStyleNone
+        .Borders(wdBorderRight).LineStyle = wdLineStyleNone
+        .Borders(wdBorderTop).LineStyle = wdLineStyleNone
+        .Borders(wdBorderBottom).LineStyle = wdLineStyleNone
+        .Borders(wdBorderHorizontal).LineStyle = wdLineStyleNone
+        .Borders(wdBorderDiagonalDown).LineStyle = wdLineStyleNone
+        .Borders(wdBorderDiagonalUp).LineStyle = wdLineStyleNone
+        .Borders.Shadow = False
+    End With
+    With Options
+        .DefaultBorderLineStyle = wdLineStyleSingle
+        .DefaultBorderLineWidth = wdLineWidth050pt
+        .DefaultBorderColor = -738131969
+    End With
+    ActiveDocument.Tables(1).Rows(2).Cells(7).Select
+    Selection.MoveDown Unit:=wdLine, Count:=5, Extend:=wdExtend
+    With Selection.Cells
+        With .Shading
+            .Texture = wdTextureNone
+            .ForegroundPatternColor = wdColorAutomatic
+            .BackgroundPatternColor = wdColorAutomatic
+        End With
+        .Borders(wdBorderLeft).LineStyle = wdLineStyleNone
+        .Borders(wdBorderRight).LineStyle = wdLineStyleNone
+        .Borders(wdBorderTop).LineStyle = wdLineStyleNone
+        .Borders(wdBorderBottom).LineStyle = wdLineStyleNone
+        .Borders(wdBorderHorizontal).LineStyle = wdLineStyleNone
+        .Borders(wdBorderDiagonalDown).LineStyle = wdLineStyleNone
+        .Borders(wdBorderDiagonalUp).LineStyle = wdLineStyleNone
+        .Borders.Shadow = False
+    End With
+    With Options
+        .DefaultBorderLineStyle = wdLineStyleSingle
+        .DefaultBorderLineWidth = wdLineWidth050pt
+        .DefaultBorderColor = -738131969
+    End With
+    ActiveDocument.Tables(1).Rows(1).Cells(11).Select
+    Selection.MoveDown Unit:=wdLine, Count:=3, Extend:=wdExtend
+    With Selection.Cells
+        With .Shading
+            .Texture = wdTextureNone
+            .ForegroundPatternColor = wdColorAutomatic
+            .BackgroundPatternColor = wdColorAutomatic
+        End With
+        .Borders(wdBorderLeft).LineStyle = wdLineStyleNone
+        .Borders(wdBorderRight).LineStyle = wdLineStyleNone
+        .Borders(wdBorderTop).LineStyle = wdLineStyleNone
+        .Borders(wdBorderBottom).LineStyle = wdLineStyleNone
+        .Borders(wdBorderHorizontal).LineStyle = wdLineStyleNone
+        .Borders(wdBorderDiagonalDown).LineStyle = wdLineStyleNone
+        .Borders(wdBorderDiagonalUp).LineStyle = wdLineStyleNone
+        .Borders.Shadow = False
+    End With
+    With Options
+        .DefaultBorderLineStyle = wdLineStyleSingle
+        .DefaultBorderLineWidth = wdLineWidth050pt
+        .DefaultBorderColor = -738131969
+    End With
+End Sub
+
+
+
+Sub Clear_H()
+    ActiveDocument.Tables(1).Rows(1).Cells(7).Select
+    Selection.MoveRight Unit:=wdCharacter, Count:=5, Extend:=wdExtend
+    Selection.Delete Unit:=wdCharacter, Count:=1
+End Sub
