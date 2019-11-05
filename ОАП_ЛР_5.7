@@ -1,15 +1,48 @@
-#include "pch.h"
+#define _USE_MATH_DEFINES
+
+//#include "pch.h"
 #include <iostream>
+#include <iomanip>
+#include <math.h>
 
 using namespace std;
 
 int main()
 {
 	setlocale(LC_ALL, "rus");
-	double x0, x1, dx, y1, y2, y3;
-	cout << "Введите начальное и конечное значение X: ";
-	cin >> x0 >> x1;
+	float x0, x1, dx, a, b, y1, y2, y3;
+	cout << "Введите начальное и конечное значение X: " << endl << "X нач. = ";
+	cin >> x0;
+	cout << "X кон. = ";
+	cin >> x1;
 	cout << "Введите шаг: ";
-	cin >> x0 >> x1;
-
+	cin >> dx;
+	cout << "Введите коэффициенты функций:" << endl << "a = ";
+	cin >> a;
+	cout << "b = ";
+	cin >> b;
+	cout << '|' << setw(5) << "X" << setw(5) << '|' << setw(6) << "Y1" << setw(5) << '|' << setw(6) << "Y2" << setw(5) << '|' << setw(6) << "Y3" << setw(5) << '|' << endl;
+	cout << "--------------------------------------------" << endl;
+	for (float x = x0; x <= x1; x += dx)
+	{
+		if (x <= 0)
+		{
+			y1 = sqrt(a * a - ((x + a) * (x + a)));
+			y3 = fabs((x * x) + M_PI * x + 1);
+		}
+		if (x > 0)
+		{
+			y1 = -b * sin(x);
+			y3 = 1 + b * log(1 + x);
+		}
+		if (x <= -1)
+		{
+			y2 = log10(b / (x * x));
+		}
+		if (x > -1)
+		{
+			y2 = log10(b + sqrt(x + 1));
+		}
+		cout << '|' << setw(9) << left << x << '|' << setw(10) << right << y1 << '|' << setw(10) << right << y2 << '|' << setw(10) << right << y3 << '|' << endl;
+	}
 }
