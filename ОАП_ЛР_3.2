@@ -1,0 +1,50 @@
+#include "pch.h"
+#include <iostream>
+//#define _USE_MATH_DEFINES
+#include "math.h"
+
+using namespace std;
+
+double a, d1;
+
+void get_a()
+{
+	cout << "Сторона ромба: ";
+	cin >> a;
+	if (a <= 0)
+	{
+		cout << "Сторона не может иметь нулевое или отрицательное значение!" << endl;
+		get_a();
+	}
+}
+void get_d1()
+{
+	cout << "Диагональ ромба: ";
+	cin >> d1;
+	if (d1 <= 0)
+	{
+		cout << "Диагональ не может иметь нулевое или отрицательное значение!" << endl;
+		get_d1();
+	}
+}
+void get_crd()
+{
+	double x1, x2, y1, y2;
+	cout << "Введите координаты вершины квадрата (A): ";
+	cin >> x1 >> y1;
+	cout << "Введите координаты вершины квадрата (B): ";
+	cin >> x2 >> y2;
+	if (x1 == x2 && y1 == y2)
+	{
+		cout << "Координаты вершин должны отличаться!" << endl;
+		get_crd();
+	}
+}
+int main()
+{
+	setlocale(LC_ALL, "rus");
+	get_a();
+	get_d1();
+	cout << endl << endl;
+	get_crd();
+}
