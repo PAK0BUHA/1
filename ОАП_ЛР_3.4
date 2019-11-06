@@ -1,0 +1,46 @@
+#include "pch.h"
+#include <iostream>
+#define _USE_MATH_DEFINES
+#include "math.h"
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "rus");
+	double x, y, r;
+
+	cout << "Введите X: ";
+	cin >> x;
+	cout << "Введите Y: ";
+	cin >> y;
+	r = 2;
+	if (y == x * x - 2)
+	{
+		cout << "Точка лежит на параболе." << endl;
+	}
+	if (y != x * x - 2)
+	{
+		cout << "Точка не лежит на параболе." << endl;
+	}
+	if (y == 3 * x - 3)
+	{
+		cout << "Точка лежит на прямой." << endl;
+	}
+	if (y != 3 * x - 3)
+	{
+		cout << "Точка не лежит на прямой." << endl;
+	}
+	if (r * r == (x - 3) * (x - 3) + y * y)
+	{
+		cout << "Точка лежит на окружности." << endl;
+	}
+	if (r * r > (x - 3) * (x - 3) + y * y)
+	{
+		cout << "Точка лежит внутри окружности." << endl;
+	}
+	if (r * r < (x - 3) * (x - 3) + y * y)
+	{
+		cout << "Точка лежит вне окружности." << endl;
+	}
+}
