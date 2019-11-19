@@ -1,0 +1,31 @@
+#include "stdafx.h"
+#include <ctime>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "rus");
+	srand(time(0));
+	int min, x, n;
+	min = 100;
+	cout << "Введите размер массива: ";
+	cin >> n;
+	int* mas = new int[n];
+	for (int i = 0; i < n; i++)
+	{
+		mas[i] = -100 + rand() % 200;
+		cout << mas[i] << " ";
+	}
+	for (int i = 0; i < n; i++)
+	{
+		if (abs(mas[i]) < abs(min))
+		{
+			min = mas[i];
+		}
+	}
+	cout << endl << min << endl;
+	system("pause");
+}
+
