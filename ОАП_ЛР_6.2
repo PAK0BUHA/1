@@ -1,0 +1,55 @@
+#include "pch.h"
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "rus");
+	srand(time(0));
+	int sum, n, fpos, lpos;
+	sum = 0;
+	fpos = -1;
+	lpos = 0;
+	cout << "Введите размер массива: ";
+	cin >> n;
+	int* A = new int[n];
+	cout << "Задан массив: ";
+	for (int i = 0; i < n; i++)
+	{
+		A[i] = rand() % 200 - 100;
+		cout << A[i] << " ";
+		if (fpos == -1)
+		{
+			if (A[i] > 0)
+			{
+			fpos = i;
+			}
+		}
+		if (A[i] > 0)
+		{
+			lpos = i;
+		}
+	}
+	cout << endl << fpos << " " << lpos;
+	if (fpos == -1)
+	{
+		cout << endl << "Все элементы массива являются отрицательными числами.";
+	}
+	else
+	{
+		if (fpos == lpos)
+		{
+			cout << endl << "В массиве только один положителный элемент: " << A[fpos];
+		}
+		else
+		{
+			for (int i = fpos; i <= lpos; i++)
+			{
+				sum += A[i];
+			}
+			cout << endl << "Сумма элементов массива между первым и последним положительными элементами: " << sum;
+		}
+	}
+}
