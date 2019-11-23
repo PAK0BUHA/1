@@ -1,0 +1,41 @@
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+
+int getx()
+{
+	int x;
+	cout << "Enter X: ";
+	cin >> x;
+	return x;
+}
+
+int gety()
+{
+	int y;
+	cout << "Enter Y: ";
+	cin >> y;
+	return y;
+}
+
+int main()
+{
+	setlocale(LC_ALL, "rus");
+	srand(time(0));
+	getx();
+	gety();
+	if (x > y)
+	{
+		cout << "X > Y";
+	}
+	if (x < y)
+	{
+		cout << "X < Y";
+	}
+	if (x == y)
+	{
+		cout << "X = Y";
+	}
+}
