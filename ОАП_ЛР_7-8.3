@@ -1,0 +1,56 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+void in(int** mas, int& n) 
+{
+	for (int i = 0; i < n; i++) 
+	{
+		mas[i] = new int[n];
+	}
+}
+
+void dab(int** mas, int& n) 
+{
+	for (int i = 0; i < n; i++) 
+	{
+		for (int j = 0; j < n; j++) 
+		{
+			mas[i][j] = /*-5 +*/ rand() % 9;
+		}
+	}
+	cout << endl;
+}
+
+void vab(int** mas, int& n) 
+{
+	for (int i = 0; i < n; i++) 
+	{
+		for (int j = 0; j < n; j++) 
+		{
+			cout << mas[i][j] << '\t';
+		}
+		cout << endl;
+	}
+	cout << endl;
+}
+
+void sum(int** mas, int& n)
+{
+
+}
+
+int main()
+{
+	srand(time(0));
+	setlocale(LC_ALL, "ru");
+	int n;
+	cout << "Введите размер квадратного массива: ";
+	cin >> n;
+	cout << "Задан массив: " << endl;
+	int** mas = new int* [n];
+	//for (int i = 0; i < n; i++)	mas[i] = new int[n];
+	in(mas, n);
+	dab(mas, n);
+	vab(mas, n);
+}
