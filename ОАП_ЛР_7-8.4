@@ -1,0 +1,96 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+void in(int** mas, int& n) 
+{
+	for (int i = 0; i < n; i++) 
+	{
+		mas[i] = new int[n];
+	}
+}
+
+void dab(int** mas, int& n) 
+{
+	for (int i = 0; i < n; i++) 
+	{
+		for (int j = 0; j < n; j++) 
+		{
+			mas[i][j] = rand() % 99;
+		}
+	}
+	cout << endl;
+}
+
+void outmas(int** mas, int& n) 
+{
+	for (int i = 0; i < n; i++) 
+	{
+		for (int j = 0; j < n; j++) 
+		{
+			cout << mas[i][j] << '\t';
+		}
+		cout << endl;
+	}
+	cout << endl;
+}
+
+void shift(int** mas, int& n)
+{
+	int k;
+	for (int i = 0; i < n; i++)
+	{
+		k = mas[i][n - 1];
+		for (int j = n; j > 0; j--)
+		{
+			mas[i][j] = mas[i][j - 1];
+		}
+		mas[i][0] = k;
+	}
+	for (int i = 0; i < n; i++)
+	{
+		k = mas[0][i];
+		for (int j = 0; j < n - 1; j++)
+		{
+			mas[j][i] = mas[j + 1][i];
+		}
+		mas[n - 1][i] = k;
+	}
+}
+
+// 1  2  3  4
+// 5  6  7  8
+// 9  10 11 12
+// 13 14 15 16
+//
+// сдвиг вправо
+//
+// 4  1  2  3
+// 8  5  6  7
+// 12 9  10 11
+// 16 13 14 15
+//
+// сдвиг вверх
+//
+// 8  5  6  7
+// 12 9  10 11
+// 16 13 14 15
+// 4  1  2  3
+
+int main()
+{
+	srand(time(0));
+	setlocale(LC_ALL, "ru");
+	int n;
+	cout << "Введите размер квадратного массива: ";
+	cin >> n;
+	cout << "Задан массив: " << endl;
+	int** mas = new int* [n];
+	in(mas, n);
+	dab(mas, n);	
+	outmas(mas, n);
+	cout << "Массив после сдвига: " << endl << endl;
+	shift(mas, n);
+	outmas(mas, n);
+	delete[] mas;
+}
