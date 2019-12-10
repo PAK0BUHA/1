@@ -2,19 +2,19 @@
 #include <ctime>
 using namespace std;
 
-void in(int** mas, int& n) 
+void getmas(int** mas, int& n)
 {
-	for (int i = 0; i < n; i++) 
+	for (int i = 0; i < n; i++)
 	{
 		mas[i] = new int[n];
 	}
 }
 
-void dab(int** mas, int& n) 
+void fillmas(int** mas, int& n)
 {
-	for (int i = 0; i < n; i++) 
+	for (int i = 0; i < n; i++)
 	{
-		for (int j = 0; j < n; j++) 
+		for (int j = 0; j < n; j++)
 		{
 			mas[i][j] = /*-5 +*/ rand() % 9;
 		}
@@ -22,22 +22,50 @@ void dab(int** mas, int& n)
 	cout << endl;
 }
 
-void vab(int** mas, int& n) 
+void outmas(int** mas, int& n)
 {
-	for (int i = 0; i < n; i++) 
+	for (int i = 0; i < n; i++)
 	{
-		for (int j = 0; j < n; j++) 
+		for (int j = 0; j < n; j++)
 		{
-			cout << mas[i][j] << '\t';
+			cout << mas[i][j] << " ";
 		}
 		cout << endl;
 	}
 	cout << endl;
 }
 
-void sum(int** mas, int& n)
+void find(int** mas, int& n)
 {
-
+	int k = 1, sum = 0, sum1 = 0, sum2 = 0;
+	for (int k = 1; k < n; k++)
+	{
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < n; j++)
+			{
+				if (fabs(i - j) == k && (j - i) > 0)
+				{
+					sum += mas[i][j];
+				}
+				else if (fabs(i - j) == k && (j - i) < 0)
+				{
+					sum2 += mas[i][j];
+				}
+			}
+			if (sum > sum1)
+			{
+				sum1 = sum;
+			}
+			if (sum2 > sum1)
+			{
+				sum1 = sum2;
+			}
+		}
+		sum = 0;
+		sum2 = 0;
+	}
+	cout << "Максимум среди сумм элементов диагоналей, параллельных главной диагонали: " << sum1 << endl;
 }
 
 int main()
@@ -49,8 +77,8 @@ int main()
 	cin >> n;
 	cout << "Задан массив: " << endl;
 	int** mas = new int* [n];
-	//for (int i = 0; i < n; i++)	mas[i] = new int[n];
-	in(mas, n);
-	dab(mas, n);
-	vab(mas, n);
+	getmas(mas, n);
+	fillmas(mas, n);
+	outmas(mas, n);
+	find(mas, n);
 }
