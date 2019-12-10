@@ -1,0 +1,33 @@
+#include <iostream>
+#include <ctime>
+#include <string.h>
+using namespace std;
+
+char* myfunc(const char* str, int c)
+{
+	int i = 0;
+	while (str[i] && str[i] != c) ++i;
+	return c == str[i] ? (char*)str + i : NULL;
+}
+
+int main()
+{
+	srand(time(0));
+	setlocale(LC_ALL, "ru");
+	//cout << "Using strchr()." << endl << endl;
+	char key;
+	char* a = new char[64];
+	cout << "Enter some text: " << endl;
+	gets_s(a, 64);
+	cout << "What do you want to find here?" << endl;
+	cin >> key;
+	char* keystr = strchr(a, key);
+	cout << '"' << key << '"' << " is on " << (keystr - a + 1) << " position." << endl;
+	//delete[] a;
+	cout << "myfunc() result: " << endl;
+	cout << "What do you want to find here?" << endl;
+	cin >> key;
+	keystr = myfunc(a, key);
+	cout << '"' << key << '"' << " is on " << (keystr - a + 1) << " position." << endl;
+	delete[] a;
+}
