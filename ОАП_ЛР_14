@@ -1,0 +1,44 @@
+#include "pch.h"
+#include <iostream>
+
+#define M_PI	3.14159265358979323846
+
+
+using namespace std;
+
+class Circle
+{
+private:
+	double rad;
+public:
+	double get_rad()
+	{
+		return rad;
+	}
+	Circle(double radius)
+	{
+		rad = radius;
+	}
+	double area()
+	{
+		double rad = get_rad();
+		double S = M_PI*(rad*rad);
+		return S;
+	}
+};
+
+class Sector: public Circle
+{
+
+};
+
+int main()
+{
+	setlocale(LC_ALL, "rus");
+	double rad;
+	cout << "Введите радиус круга: ";
+	cin >> rad;
+	Circle crcl(rad);
+	cout << "Влощадь круга: " << crcl.area();
+	return 0;
+}
