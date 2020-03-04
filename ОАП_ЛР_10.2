@@ -1,0 +1,118 @@
+// КАТАЛОГ музыкальных ПРОИЗВЕДЕНИЙ
+// Имя исполнителя
+// Название
+// Стиль
+// Продолжительность
+// Упорядочить по возрастанию продолжительности
+// Вывести список произведений указанного исполнителя 
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+struct SONG
+{
+	string Author;
+	string Title;
+	string Style;
+	int Duration;
+};
+
+struct CAT
+{
+	int N;
+	vector <SONG> Song;
+};
+
+SONG song_in()
+{
+	SONG song;
+	cin.ignore(256, '\n');
+	cout << "Input song's author: ";
+	getline(cin, song.Author);
+	cout << "Input song's title: ";
+	getline(cin, song.Title);
+	cout << "Input song's style: ";
+	cin >> song.Style;
+	cout << "Input song's duration: ";
+	cin >> song.Duration;
+	cout << endl;
+	return song;
+}
+
+void cat_in(CAT& cat)
+{
+	cout << "Input the number of songs in catalog: ";
+	cin >> cat.N;
+	cout << endl;
+	cat.Song.resize(cat.N);
+	for (int i = 0; i < cat.N; ++i)
+	{
+		cout << "Song number " << i + 1 << ":" << endl;
+		cat.Song[i] = song_in();
+	}
+}
+
+void song_out(SONG song)
+{
+	cout << " " 
+		<< song.Author << " | "
+		<< song.Title << " | "
+		<< song.Style << " | ";
+		if (song.Duration % 60 <= 9)
+		{
+			cout << song.Duration / 60 << ":0" << song.Duration % 60 << endl;
+		}
+		else
+		{
+			cout << song.Duration / 60 << ":" << song.Duration % 60 << endl;
+		}
+}
+
+void cat_out(CAT cat)
+{
+	cout << endl << "Catalog: | Author | Title | Style | Duration |" << endl;
+	for (int i = 0; i < cat.N; ++i)
+	{
+		cout << "Song number " << i + 1 << ": ";
+		song_out(cat.Song[i]);
+	}
+}
+
+bool cmp(const SONG& song1, const SONG& song2)
+{
+	if (song1.Duration < song2.Duration) { return true; }
+	else { return false; }
+}
+
+void author_out(string author, CAT cat)
+{
+	bool flag = false;
+	cout << endl << "Songs of " << author << ":" << endl;
+	for (int i = 0; i < cat.N; ++i)
+	{
+		if (cat.Song[i].Author == author) { song_out(cat.Song[i]); flag = true; }
+	}
+	if (flag == false) { cout << "No songs found" << endl; }
+
+}
+
+int main()
+{
+	CAT cat;
+	string author;
+	cat_in(cat);
+	cat_out(cat);
+	sort(cat.Song.begin(), cat.Song.end(), cmp);
+	cout << endl << "Sorted catalog: " << endl;
+	cat_out(cat);
+	cin.ignore(256, '\n');
+	cout << endl << "Input author's name: ";
+	getline(cin, author);
+	author_out(author, cat);
+	system("pause");
+	return 0;
+}
