@@ -1,0 +1,231 @@
+// geometry.h
+
+#ifndef GEOMETRY_H
+#define GEOMETRY_H
+
+class Point
+{
+	double x, y;			   // координаты точки
+public:
+	Point(double X, double Y); // конструктор класса
+	double getX();             // чтение поля X
+	double getY();             // чтение поля Y
+};
+
+class Circle
+{
+	Point center;					// центр окружности
+	double r;						// радиус окружности
+public:
+	Circle(Point Center, double R); // конструктор класса
+	Point getCenter();              // чтение поля Center
+	double getR();                  // чтение поля R
+};
+
+class Line
+{
+	double A, B, C;						// коэффициенты прямой
+public:
+	Line(double a, double b, double c); // конструктор класса
+	Line(Point p1, Point p2);           // еще один конструктор
+	Point getIntersect(Line line);      // найти точку пересечения с заданной прямой
+	Line getPerpendicular(Point p);		// найти перпендикулярную прямую,
+										// проходящую через заданную точку
+};
+
+class Segment
+{
+	double x1, y1, x2, y2;		 // координаты концов отрезка
+public:
+	Segment(Point p1, Point p2); // конструктор класса
+	Point getMidpoint();         // найти середину отрезка
+	double getLength();          // найти длину отрезка
+};
+
+class Vector
+{
+
+public:
+
+};
+
+#endif
+
+
+// geometry.cpp
+
+#include "stdafx.h"
+#include <math.h>
+#include "geometry.h"
+#include <iostream>
+
+using namespace std;
+
+Point::Point(double X, double Y) 
+{
+	x = X; y = Y;
+}
+
+double Point::getX()
+{
+	return x;
+}
+
+double Point::getY()
+{
+	return y;
+}
+
+Circle::Circle(Point Center, double R) :center(Center)
+{
+	r = R;
+}
+
+Point Circle::getCenter()
+{
+	return center;
+}
+
+double Circle::getR()
+{
+	return r;
+}
+
+Line::Line(double a, double b, double c)
+{
+	A = a; B = b; C = c;
+}
+
+Line::Line(Point p1, Point p2)
+{
+	A = p2.getY() - p1.getY();
+	B = p1.getX() - p2.getX();
+	C = -A*p1.getX() - B*p1.getY();
+}
+
+Point Line::getIntersect(Line line)
+{
+	double d = A*line.B - B*line.A,
+		d1 = -(C*line.B - B*line.C),
+		d2 = -(A*line.C - C*line.A);
+	return Point(d1 / d, d2 / d);
+}
+
+Line Line::getPerpendicular(Point p)
+{
+	return Line(B, -A, -B*p.getX() + A*p.getY());
+}
+
+Segment::Segment(Point p1, Point p2)
+{
+	x1 = p1.getX(); y1 = p1.getY();
+	x2 = p2.getX(); y2 = p2.getY();
+}
+
+Point Segment::getMidpoint()
+{
+	return Point((x1 + x2) / 2, (y1 + y2) / 2);
+}
+
+double Segment::getLength()
+{
+	return sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
+}
+
+int main()
+{
+	setlocale(LC_ALL, "rus");
+	double x1, y1, x2, y2, x3, y3, x4, y4;
+	cout << "Введите координаты первой вершины параллелограмма: ";
+	cin >> x1 >> y1;
+	cout << "Введите координаты второй вершины параллелограмма: ";
+	cin >> x2 >> y2;
+	cout << "Введите координаты третьей вершины параллелограмма: ";
+	cin >> x3 >> y3;
+	Point
+	A = Point(x1, y1),
+	B = Point(x2, y2),
+	C = Point(x3, y3);
+	Segment
+	Seg1 = Segment(A, B),
+	Seg2 = Segment(B, C);
+	Line
+	line1 = Line(A, B),
+	line2 = Line(B, C);
+	system("pause");
+	return 0;
+}
+
+
+// triangle.cpp
+
+/***************************************************************
+ *                                                             *
+ * Файл     : triangle.cpp                                     *
+ *                                                             *
+ * Описание : главный файл проекта для демонстрации            *
+ *            использования объектов для решения               *
+ *            геометрических задач                             *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * Дано     : Координаты вершин треугольника.                  *
+ * Найти    : Описанную около этого треугольника окружность.   *
+ *                                                             *
+ ***************************************************************/
+
+#include <windows.h>
+#include "geometry.h"
+#include <iostream.h>
+
+int main(int argc, char* argv[]) {
+  SetConsoleOutputCP(1251);
+
+  // ----- ввод исходных данных -----
+  double x1,y1,x2,y2,x3,y3;
+  cout<<"Введите координаты первой точки ===> ";
+  cin>>x1>>y1;
+  cout<<"Введите координаты второй точки ===> ";
+  cin>>x2>>y2;
+  cout<<"Введите координаты третьей точки ==> ";
+  cin>>x3>>y3;
+
+  // ----- создание точек - вершин треугольника -----
+  Point A=Point(x1,y1),
+        B=Point(x2,y2),
+        C=Point(x3,y3);
+
+  // ----- создание отрезков - сторон треугольника -----
+  Segment Otrezok1=Segment(A,B),
+          Otrezok2=Segment(B,C);
+
+  // ----- создание точек - середин сторон треугольника -----
+  Point S1=Otrezok1.getMidpoint(),
+        S2=Otrezok2.getMidpoint();
+
+  // ----- создание прямых, проходящих через стороны треугольника -----
+  Line line1=Line(A,B),
+       line2=Line(B,C),
+  // ----- ... и серединных перепндикуляров к этим сторонам ... -----
+       midperpendicular1=line1.getPerpendicular(S1),
+       midperpendicular2=line2.getPerpendicular(S2);
+
+  // ----- нахождение точки пересечения серединных перпендикуляров -----
+  Point O=midperpendicular1.getIntersect(midperpendicular2);
+
+  // ----- создание отрезка - радиуса -----
+  Segment Radius=Segment(O,A);
+
+  // ----- создание окружности с заданным центром и радиусом -----
+  Circle circle=Circle(O,Radius.getLength());
+
+  // ----- вывод результата -----
+  cout << "Центр окружности расположен в точке ("
+       << circle.getCenter().getX() << ',' << circle.getCenter().getY()
+       << "), радиус = " << circle.getR() << endl;
+
+  Sleep(9999);
+  return 0;
+  }
+
+// ================= конец программы ===========================
